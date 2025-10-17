@@ -2,6 +2,9 @@
 
 ```shell
 mkdir express-api && cd express-api
+```
+
+```shell
 npm init -y
 ```
 
@@ -9,6 +12,9 @@ npm init -y
 
 ```shell
 npm install express @prisma/client jsonwebtoken bcryptjs
+```
+
+```shell
 npm install -D typescript ts-node-dev @types/express @types/node prisma
 ```
 ## Start TS
