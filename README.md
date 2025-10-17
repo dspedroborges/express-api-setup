@@ -1,3 +1,5 @@
+# Express API with TS, Prisma and JWT
+
 ## Start the project
 
 ```shell
