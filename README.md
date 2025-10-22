@@ -13,7 +13,7 @@ npm init -y
 ## Install libs
 
 ```shell
-npm install express @prisma/client jsonwebtoken bcryptjs dotenv
+npm install express @prisma/client jsonwebtoken bcryptjs uuid dotenv
 ```
 
 ```shell
