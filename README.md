@@ -25,6 +25,12 @@ npm install -D typescript ts-node-dev @types/express @types/node prisma
 npx tsc --init
 ```
 
+## Start Prisma
+
+```shell
+npx prisma init
+```
+
 ### tsconfig.json:
 
 ```json
@@ -42,12 +48,6 @@ npx tsc --init
     "types": ["node", "express"]
   }
 }
-```
-
-## Start Prisma
-
-```shell
-npx prisma init
 ```
 
 ## Set the scripts
