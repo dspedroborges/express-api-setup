@@ -10,6 +10,32 @@ mkdir express-api && cd express-api
 npm init -y
 ```
 
+## In package.json, change main from index.js to
+
+```json
+"main": "src/server.ts",
+```
+
+## And below "main", add
+
+```json
+"type": "module"
+```
+
+## vercel.json
+
+```json
+{
+  "version": 2,
+  "builds": [
+    { "src": "dist/server.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "dist/server.js" }
+  ]
+}
+```
+
 ## Install libs
 
 ```shell
@@ -31,31 +57,19 @@ npx tsc --init
 npx prisma init
 ```
 
-### tsconfig.json:
+### Uncomment these lines from the tsconfig.json file:
 
 ```json
-{
-  "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "sourceMap": true,
-    "types": ["node", "express"]
-  }
-}
+"rootDir": "./src",
+"outDir": "./dist",
 ```
 
 ## Scripts to the package.json
 
 ```json
-"scripts": {
-  "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-  "build": "tsc",
-  "start": "node dist/server.js"
-},
+{
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+}
 ```
